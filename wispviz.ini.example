@@ -1,0 +1,21 @@
+; Copy to wispviz.ini next to wispviz.exe. wispviz also rewrites this file when you use the right-click menu.
+[wispviz]
+style=0            ; 0 Capsule 1 Bars 2 Mirror 3 Wave 4 Radial 5 Pulse 6 Ripple 7 Aurora 8 Dots 9 Burst 10 Strings
+size=14            ; 6..50, scales EVERYTHING (wave, album art, text, buttons). Right-click > Size... opens a slider
+bars=14            ; number of wave bars (ini only)
+color=0            ; 0 Pink 1 Cyan 2 Mint 3 Amber 4 White 5 Coral 6 Violet 7 Lime 8 Sky 9 Crimson
+energy=2           ; 0 Calm  1 Normal  2 Punchy (beat-reactive jump + glow)
+style_per_song=0   ; 1 = switch to a different animation whenever a new song starts (needs the player to report track titles)
+cycle_seconds=2    ; 0 = off, otherwise auto-change colour every N seconds (default 2; the menu offers 2 / 3 / 5)
+always_on_top=1    ; 1 = over every app, 0 = desktop only (apps cover it)
+show_info=0        ; 1 = song title, artist, album art and prev / play-pause / next
+delay_ms=0         ; 0..500, delay the visuals - useful with Bluetooth headphones
+x=-1               ; window position, saved when you drag it (-1 = default)
+y=-1
+; ---- Screen mode: a full-width visualiser standing on the bottom edge of the screen (song panel hidden, click-through) ----
+screen_mode=0      ; 1 = on. Toggle any time with Ctrl+Alt+V or the tray icon
+screen_look=0      ; 0 Classic bars with peak caps   1 Thin needles with a beat glow
+screen_height=16   ; 8..60, percent of the screen height (default 16)
+screen_opacity=35  ; 8..100, how solid the bars are (default 35, faint). Menu: Screen mode > Opacity...
+balance=1          ; 0 Natural  1 Balanced  2 Even (how much each part of the spectrum is normalised on its own)
+screen_on_top=0    ; 0 = behind your windows (visible on the desktop), 1 = over every app

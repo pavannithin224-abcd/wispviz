@@ -1,0 +1,25 @@
+name: build
+on:
+  push: { branches: [main] }
+  pull_request:
+  release: { types: [published] }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build (MinGW-w64 g++ and windres ship on the runner)
+        shell: bash
+        run: make
+      - name: Report size
+        shell: bash
+        run: ls -l wispviz.exe
+      - uses: actions/upload-artifact@v4
+        with: { name: wispviz, path: wispviz.exe }
+      - name: Attach to release
+        if: github.event_name == 'release'
+        shell: bash
+        env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: gh release upload "${{ github.event.release.tag_name }}" wispviz.exe --clobber

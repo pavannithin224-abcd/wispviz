@@ -1,0 +1,6 @@
+*.exe
+*.o
+build/
+wispviz_log.txt
+wispviz.ini
+icon.o
